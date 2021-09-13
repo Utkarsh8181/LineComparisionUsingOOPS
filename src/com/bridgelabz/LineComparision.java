@@ -38,17 +38,29 @@ public class LineComparision {
         return line2;
     }
 
-    public static void main(String[] args) {
+    public void compareMethod(){
         LineComparision line = new LineComparision();
-        line.welcome();
         double line1length = line.lengthOfLine1();
         double line2length = line.lengthOfLine2();
         if(line1length == line2length){
             System.out.println("The length of both the Lines are Equal");
-        }else
-        {
-            System.out.println("The length of both the Lines are not Equal");
         }
+        else if (line1length > line2length)
+        {
+            System.out.println("The length of Line1 is gerater then Line2");
+        }
+        else {
+            System.out.println("The length of Line2 is gerater then Line1");
+        }
+
+    }
+
+
+    public static void main(String[] args) {
+        LineComparision line = new LineComparision();
+        line.welcome();
+        line.compareMethod();
+
 
     }
 }
