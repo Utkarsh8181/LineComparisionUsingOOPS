@@ -6,7 +6,7 @@ public class LineComparision {
     double line1, line2;
     Scanner scanner = new Scanner(System.in);
 
-    public void welcome(){
+    public static void welcome(){
         System.out.println("......Welcome to Line Comparison Computation Program using OOPS...");
     }
     public double lengthOfLine1(){
@@ -38,29 +38,30 @@ public class LineComparision {
         return line2;
     }
 
-    public void compareMethod(){
-        LineComparision line = new LineComparision();
-        double line1length = line.lengthOfLine1();
-        double line2length = line.lengthOfLine2();
-        if(line1length == line2length){
+    double line1Length = lengthOfLine1();
+    double line2Length = lengthOfLine2();
+    public void equalsTo() {
+        if (line1Length == line2Length) {
             System.out.println("The length of both the Lines are Equal");
+        } else {
+            System.out.println("Calling compareTo method");
         }
-        else if (line1length > line2length)
-        {
-            System.out.println("The length of Line1 is gerater then Line2");
-        }
-        else {
-            System.out.println("The length of Line2 is gerater then Line1");
-        }
-
     }
 
+    public void compareTo() {
+        if (line1Length > line2Length) {
+            System.out.println("The length of Line1 is greater than Line2 ");
+        } else if (line2Length > line1Length){
+            System.out.println("The length of Lines2 is greater than Line1");
+        }else {
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
+        welcome();
         LineComparision line = new LineComparision();
-        line.welcome();
-        line.compareMethod();
-
-
+        line.equalsTo();
+        line.compareTo();
     }
 }
